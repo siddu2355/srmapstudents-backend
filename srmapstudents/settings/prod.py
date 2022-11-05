@@ -9,7 +9,7 @@ DEBUG = False
 #Allowed hosts only required when debug is false
 ALLOWED_HOSTS = ['srmapstudents-prod.herokuapp.com']
 
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'siddu235463'
 
 DATABASES = {
     'default': {
