@@ -20,6 +20,6 @@ DATABASES = {
         'PORT':'5432',
     }
 }
-
+AUTH_USER_MODEL="core.user"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 django_heroku.settings(locals())
