@@ -41,7 +41,7 @@ def github(request):
         number_of_repos_span = soup.find('span', class_='Counter')
         valid = "Valid Username."
         if number_of_repos_span is not None:
-            number_of_repos = number_of_repos_span.text
+            number_of_repos = int(number_of_repos_span.text)
         else:
             number_of_repos = 0
             valid = "Invalid Username."
