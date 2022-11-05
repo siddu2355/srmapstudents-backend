@@ -35,8 +35,8 @@ class GitHubDetail(models.Model):
 class CodeChefDetail(models.Model):
     rating = models.PositiveIntegerField()
     highest_rating = models.PositiveIntegerField()
-    global_rank = models.PositiveIntegerField()
-    country_rank = models.PositiveIntegerField()
+    global_rank = models.CharField(max_length=50)
+    country_rank = models.CharField(max_length=50)
     no_of_contests = models.PositiveIntegerField()
     number_of_problems_solved = models.PositiveIntegerField()
     division = models.CharField(max_length=255)

@@ -41,9 +41,13 @@ def github(request):
         number_of_repos_span = soup.find('span', class_='Counter')
         valid = "Valid Username."
         if number_of_repos_span is not None:
-            number_of_repos = int(number_of_repos_span.text)
+            number_of_repos = number_of_repos_span.text
+            if number_of_repos == "":
+                number_of_repos = 0
+            else:
+                number_of_repos = int(number_of_repos_span.text)
         else:
-            number_of_repos = 0
+            number_of_repos = '0'
             valid = "Invalid Username."
         result_data = {
             'student_id': id,
@@ -123,11 +127,11 @@ def codechef(request):
         soup = BeautifulSoup(html, 'lxml')
         rank_div = soup.find('div', class_='rating-ranks')
         if rank_div is not None:
-            global_rank = int(rank_div.ul.li.a.text)
-            country_rank = int(rank_div.ul.li.find_next('li').a.text)
+            global_rank = rank_div.ul.li.a.text
+            country_rank = rank_div.ul.li.find_next('li').a.text
         else:
-            global_rank = 0
-            country_rank = 0
+            global_rank = '0'
+            country_rank = '0'
         number_of_contests_div = soup.find('div', class_='contest-participated-count')
         if number_of_contests_div is not None:
             number_of_contests = int(number_of_contests_div.b.text)
