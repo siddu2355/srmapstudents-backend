@@ -12,10 +12,10 @@ class Student(models.Model):
     section = models.CharField(max_length=1)
     codeforces_username = models.CharField(max_length=255, unique=True)
     codechef_username = models.CharField(max_length=255, unique=True)
-    leetcode_username = models.CharField(max_length=255, unique=True)
-    hackerrank_username = models.CharField(max_length=255, unique=True)
     github_username = models.CharField(max_length=255, unique=True)
-    linkedin_username = models.CharField(max_length=255, unique=True)
+    leetcode_username = models.CharField(max_length=255, unique=True, null=True)
+    hackerrank_username = models.CharField(max_length=255, unique=True, null=True)
+    linkedin_username = models.CharField(max_length=255, unique=True, null=True)
     user = models.OneToOneField(common.AUTH_USER_MODEL, on_delete=models.CASCADE)
      # def __str__(self):
      #     return self.leetcode_username
